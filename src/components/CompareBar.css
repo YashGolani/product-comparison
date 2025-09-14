@@ -1,0 +1,110 @@
+.compare-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--bg-secondary);
+  border-top: 1px solid var(--border-color);
+  padding: 1rem;
+  z-index: 1000;
+  transform: translateY(0);
+  transition: transform 0.3s ease;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.compare-bar-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 1rem;
+  flex-wrap: wrap;
+}
+
+.selected-count {
+  font-weight: 500;
+  color: var(--text-primary);
+  flex-shrink: 0;
+}
+
+.compare-bar-actions {
+  display: flex;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.compare-action-button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+  white-space: nowrap;
+}
+
+.compare-action-button:not(.primary) {
+  background-color: transparent;
+  color: var(--text-primary);
+}
+
+.compare-action-button:not(.primary):hover {
+  background-color: var(--border-color);
+}
+
+.compare-action-button.primary {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+}
+
+.compare-action-button.primary:hover {
+  background-color: var(--button-hover-bg);
+}
+
+/* Mobile responsive improvements */
+@media (max-width: 480px) {
+  .compare-bar {
+    padding: 0.5rem;
+  }
+
+  .compare-bar-content {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+    padding: 0 0.5rem;
+  }
+
+  .compare-bar-actions {
+    gap: 0.5rem;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .compare-action-button {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+    min-width: 80px;
+  }
+
+  .selected-count {
+    font-size: 0.9rem;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .compare-bar {
+    padding: 0.75rem;
+  }
+
+  .compare-bar-content {
+    gap: 0.75rem;
+    padding: 0 0.5rem;
+  }
+
+  .compare-action-button {
+    padding: 0.55rem 0.9rem;
+    font-size: 0.95rem;
+  }
+}

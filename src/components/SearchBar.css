@@ -1,0 +1,123 @@
+.search-bar {
+  padding: 1rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.search-input-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  padding-right: 2.5rem;
+  font-size: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: border-color 0.2s ease;
+}
+
+.search-input::-webkit-search-cancel-button,
+.search-input::-webkit-search-decoration {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.search-input::-ms-clear {
+  display: none;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 2px var(--accent-color-light);
+}
+
+.search-input::placeholder {
+  color: var(--text-secondary);
+}
+
+.search-clear-button {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.5rem;
+  height: 1.5rem;
+  border: none;
+  background: none;
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.search-clear-button:hover {
+  background-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+.search-clear-button:focus {
+  outline: none;
+  background-color: var(--border-color);
+  box-shadow: 0 0 0 2px var(--accent-color-light);
+}
+
+/* Mobile responsive */
+@media (max-width: 480px) {
+  .search-bar {
+    padding: 0.75rem;
+  }
+
+  .search-input-container {
+    max-width: 100%;
+  }
+
+  .search-input {
+    padding: 0.65rem 0.85rem;
+    padding-right: 2.2rem;
+    font-size: 0.95rem;
+  }
+
+  .search-clear-button {
+    width: 1.3rem;
+    height: 1.3rem;
+    font-size: 1.1rem;
+    right: 0.4rem;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .search-bar {
+    padding: 1rem;
+  }
+
+  .search-input-container {
+    max-width: 100%;
+  }
+
+  .search-input {
+    padding-right: 2.3rem;
+  }
+
+  .search-clear-button {
+    width: 1.4rem;
+    height: 1.4rem;
+    font-size: 1.15rem;
+  }
+}
